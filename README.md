@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Global Tours & Travels 🌍
 
-## Getting Started
+A modern, production-ready travel agency website built with **Next.js 15**, **Tailwind CSS v4**, and **Framer Motion**.
 
-First, run the development server:
+## ✨ Features
+
+- 🎨 Premium design — glassmorphism nav, animated hero, Sora + Mulish fonts
+- 📱 **Mobile-first** — horizontal swipe cards, proper touch targets, iOS-safe
+- 🗺️ 6 destination cards with real photos (Goa, Manali, Kerala, Rajasthan, Andaman, Dubai)
+- 📦 3 tour package tiers — Family, Friends (featured), Solo/Couple
+- 💬 Contact form with success state + WhatsApp floating button
+- 🔍 Full SEO — metadata, OpenGraph, semantic HTML
+- ⚡ Static site generation (SSG) — deploys anywhere
+
+## 🛠 Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| Next.js 15 | Framework (App Router, SSG) |
+| Tailwind CSS v4 | Styling |
+| Framer Motion | Animations |
+| Lucide React | Icons |
+| Google Fonts | Sora + Mulish |
+
+## 🚀 Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production build
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx       # Root layout, fonts, SEO metadata
+  page.tsx         # Main page — assembles all sections
+  globals.css      # Design tokens, animations, global styles
+components/
+  Navbar.tsx       # Sticky glassmorphism nav + mobile drawer
+  Hero.tsx         # Full-bleed hero with animated counters
+  Destinations.tsx # 6 destination cards (swipe on mobile)
+  Packages.tsx     # 3 package tiers
+  WhyUs.tsx        # Why choose us section
+  Testimonials.tsx # Traveler reviews (swipe on mobile)
+  ContactForm.tsx  # Trip inquiry form with success state
+  Footer.tsx       # 4-column footer
+  FloatButtons.tsx # WhatsApp + back-to-top floating buttons
+```
 
-## Learn More
+## 🌐 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deploy instantly to **Vercel** (recommended for Next.js):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or use Netlify, Railway, or any Node.js host.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Founded by Nisarg Patel & Aryan Patel** · *Explore. Dream. Discover.*
