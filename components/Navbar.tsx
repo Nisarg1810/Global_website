@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,15 +16,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll listener
-  typeof window !== "undefined" &&
-    (() => {
-      if (typeof window === "undefined") return;
-    })();
-
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => setScrolled(window.scrollY > 60), { passive: true });
-  }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -35,7 +31,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "glass-nav shadow-sm py-3" : "bg-transparent py-4"
         }`}
       >
@@ -44,7 +40,7 @@ export default function Navbar() {
           <a href="#home" onClick={(e) => handleNav(e, "#home")} className="flex items-center gap-2.5 shrink-0">
             <span
               className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white font-display font-extrabold text-[15px] shrink-0"
-              style={{ background: "linear-gradient(135deg,#1B3A6B,#00AEEF)", boxShadow: "0 6px 16px rgba(0,174,239,0.3)" }}
+              style={{ background: "linear-gradient(135deg,#0B2547,#00AEEF)", boxShadow: "0 4px 14px rgba(0,174,239,0.28)" }}
             >
               GT
             </span>
@@ -52,7 +48,7 @@ export default function Navbar() {
               <span className={`font-display font-bold text-[14px] sm:text-[15px] tracking-tight transition-colors ${scrolled ? "text-navy" : "text-white"}`}>
                 Global Tours <span className="text-sky">& Travels</span>
               </span>
-              <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.14em] uppercase font-bold text-gold">
+              <span className={`text-[8.5px] sm:text-[9.5px] tracking-[0.14em] uppercase font-bold transition-colors ${scrolled ? "text-sky" : "text-sky/80"}`}>
                 Explore · Dream · Discover
               </span>
             </span>
@@ -73,8 +69,8 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNav(e, "#contact")}
-              className="bg-gold text-[#3a2a00] font-bold text-[13px] px-4 py-2.5 rounded-full hover:brightness-105 transition-all"
-              style={{ boxShadow: "0 8px 18px rgba(245,166,35,0.32)" }}
+              className="bg-accent text-white font-bold text-[13px] px-4 py-2.5 rounded-full hover:brightness-110 transition-all"
+              style={{ boxShadow: "0 6px 16px rgba(21,88,208,0.32)" }}
             >
               Get a Quote
             </a>
@@ -85,12 +81,12 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNav(e, "#contact")}
-              className="bg-gold text-[#3a2a00] font-bold text-[12px] px-3.5 py-2 rounded-full"
+              className="bg-accent text-white font-bold text-[12px] px-3.5 py-2 rounded-full"
             >
               Quote
             </a>
             <button
-              className={`p-2 rounded-xl min-w-[44px] min-h-[44px] flex items-center justify-center`}
+              className="p-2 rounded-xl min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >

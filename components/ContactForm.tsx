@@ -49,9 +49,10 @@ export default function ContactForm() {
           transition={{ duration: 0.55 }}
         >
           <span className="text-sky font-extrabold text-[11.5px] sm:text-[12.5px] tracking-[0.18em] uppercase">
-            Plan My Trip
+            ▸ Get In Touch
           </span>
-          <h2 className="font-display font-extrabold text-navy mt-2.5 tracking-tight leading-tight text-[26px] sm:text-[36px] lg:text-[44px]">
+          <div className="w-8 h-[2px] bg-sky/50 rounded-full mt-3 mb-3" />
+          <h2 className="font-display font-extrabold text-navy tracking-tight leading-tight text-[26px] sm:text-[36px] lg:text-[44px]">
             Tell us your dream trip
           </h2>
           <p className="text-muted text-[14px] sm:text-[15.5px] leading-relaxed mt-3 mb-6">
@@ -191,11 +192,11 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex items-center justify-center gap-2.5 bg-gold text-[#3a2a00] font-extrabold text-[15.5px] py-4 rounded-xl hover:brightness-105 active:scale-95 disabled:opacity-60 transition-all"
-                  style={{ boxShadow: "0 10px 24px rgba(245,166,35,0.34)" }}
+                  className="flex items-center justify-center gap-2.5 bg-accent text-white font-extrabold text-[15.5px] py-4 rounded-xl hover:brightness-110 active:scale-95 disabled:opacity-60 transition-all"
+                  style={{ boxShadow: "0 10px 24px rgba(21,88,208,0.30)" }}
                 >
                   {loading
-                    ? <span className="animate-spin w-5 h-5 border-2 border-[#3a2a00]/30 border-t-[#3a2a00] rounded-full" />
+                    ? <span className="animate-spin w-5 h-5 border-2 border-white/30 border-t-white rounded-full" />
                     : <Send className="w-4 h-4" strokeWidth={2.5} />
                   }
                   {loading ? "Sending..." : "Send My Inquiry →"}

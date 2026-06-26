@@ -73,9 +73,10 @@ export default function Destinations() {
         className="text-center max-w-[600px] mx-auto mb-10 sm:mb-14"
       >
         <span className="text-sky font-extrabold text-[11.5px] sm:text-[12.5px] tracking-[0.18em] uppercase">
-          Top Destinations
+          ▸ Top Destinations
         </span>
-        <h2 className="font-display font-extrabold text-navy mt-2.5 tracking-tight leading-tight text-[26px] sm:text-[36px] lg:text-[46px]">
+        <div className="w-8 h-[2px] bg-sky/50 rounded-full mx-auto mt-3 mb-3" />
+        <h2 className="font-display font-extrabold text-navy tracking-tight leading-tight text-[26px] sm:text-[36px] lg:text-[46px]">
           Where will you go next?
         </h2>
         <p className="text-muted text-[14.5px] sm:text-[16px] leading-relaxed mt-3">
@@ -92,30 +93,28 @@ export default function Destinations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06, duration: 0.4, ease: EASE }}
-            className="snap-start shrink-0 w-[72vw] max-w-[280px] rounded-[18px] overflow-hidden bg-white border border-navy/[0.06] flex flex-col"
-            style={{ boxShadow: "0 8px 24px rgba(27,58,107,0.1)" }}
+            className="snap-start shrink-0 w-[72vw] max-w-[280px] rounded-[18px] overflow-hidden bg-white border border-navy/[0.07] flex flex-col"
+            style={{ boxShadow: "0 6px 22px rgba(11,37,71,0.09)" }}
           >
-            {/* Image */}
             <div className="relative h-44 overflow-hidden">
               <img src={d.image} alt={d.name} className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
               <span className="absolute top-3 left-3 bg-white/92 text-navy font-extrabold text-[11px] px-3 py-1 rounded-full">
                 {d.emoji} {d.tag}
               </span>
             </div>
-            {/* Body */}
             <div className="p-4 flex flex-col flex-1">
               <h3 className="font-display font-bold text-[19px] text-navy">{d.name}</h3>
               <p className="text-card-text text-[12.5px] leading-snug mt-1.5 mb-4 flex-1">{d.blurb}</p>
               <div className="flex items-center justify-between gap-2">
                 <div>
-                  <span className="text-[10.5px] text-[#8493aa]">From</span>
+                  <span className="text-[10.5px] text-muted">From</span>
                   <div className="font-display font-extrabold text-[18px] text-navy">{d.price}</div>
                 </div>
                 <a
                   href="#contact"
                   onClick={scrollToContact}
-                  className="bg-navy text-white font-bold text-[12.5px] px-4 py-2.5 rounded-full active:scale-95 transition-transform"
+                  className="bg-accent text-white font-bold text-[12.5px] px-4 py-2.5 rounded-full active:scale-95 transition-transform"
                 >
                   Book →
                 </a>
@@ -141,12 +140,19 @@ export default function Destinations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.5, ease: EASE }}
-            className="card-hover rounded-[20px] overflow-hidden bg-white border border-navy/[0.06]"
-            style={{ boxShadow: "0 10px 30px rgba(27,58,107,0.09)" }}
+            className="group rounded-[20px] overflow-hidden bg-white border border-navy/[0.07] flex flex-col transition-all duration-300 hover:-translate-y-1.5"
+            style={{ boxShadow: "0 6px 22px rgba(11,37,71,0.08)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 18px 44px rgba(11,37,71,0.14)")}
+            onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 6px 22px rgba(11,37,71,0.08)")}
           >
             <div className="relative h-52 overflow-hidden">
-              <img src={d.image} alt={d.name} className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
+              <img
+                src={d.image}
+                alt={d.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/45 via-transparent to-transparent" />
               <span className="absolute top-3.5 left-3.5 bg-white/92 text-navy font-extrabold text-[11.5px] px-3.5 py-1.5 rounded-full">
                 {d.emoji} {d.tag}
               </span>
@@ -156,13 +162,13 @@ export default function Destinations() {
               <p className="text-card-text text-[13.5px] leading-snug mt-2 mb-5 flex-1">{d.blurb}</p>
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <span className="text-[11.5px] text-[#8493aa]">Starting from</span>
+                  <span className="text-[11.5px] text-muted">Starting from</span>
                   <div className="font-display font-extrabold text-[20px] text-navy">{d.price}</div>
                 </div>
                 <a
                   href="#contact"
                   onClick={scrollToContact}
-                  className="bg-mist text-navy font-bold text-[13.5px] px-5 py-2.5 rounded-full border border-sky/25 hover:bg-sky hover:text-white transition-all duration-200"
+                  className="bg-mist text-accent font-bold text-[13.5px] px-5 py-2.5 rounded-full border border-accent/20 hover:bg-accent hover:text-white transition-all duration-200"
                 >
                   Explore →
                 </a>

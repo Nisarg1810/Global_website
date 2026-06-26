@@ -36,7 +36,7 @@ export default function Footer() {
               style={{ background: "linear-gradient(135deg,#1B3A6B,#00AEEF)" }}>GT</span>
             <span className="font-display font-bold text-[15px]">Global Tours & Travels</span>
           </div>
-          <p className="text-gold font-bold text-[12px] tracking-[0.1em] mb-2">Explore. Dream. Discover.</p>
+          <p className="text-sky font-bold text-[12px] tracking-[0.1em] mb-2">Explore. Dream. Discover.</p>
           <p className="text-white/55 text-[12.5px] leading-relaxed mb-4">
             Customized tours for families, friends, and solo travelers.
             Crafted by Nisarg Patel & Aryan Patel.
@@ -61,7 +61,7 @@ export default function Footer() {
                 style={{ background: "linear-gradient(135deg,#1B3A6B,#00AEEF)" }}>GT</span>
               <span className="font-display font-bold text-[16px]">Global Tours & Travels</span>
             </div>
-            <p className="text-gold font-bold text-[13px] tracking-[0.1em] mb-3">Explore. Dream. Discover.</p>
+            <p className="text-sky font-bold text-[13px] tracking-[0.1em] mb-3">Explore. Dream. Discover.</p>
             <p className="text-white/60 text-[13px] leading-relaxed">
               Customized tour packages for families, friends, and solo travelers. Crafted by Nisarg Patel & Aryan Patel.
             </p>
